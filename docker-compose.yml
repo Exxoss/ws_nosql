@@ -1,0 +1,26 @@
+version: '2'
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - loadb
+  
+  loadb:
+    build: LoadB
+    ports:
+      - "8080:8080"
+    depends_on:
+      - couch1
+      - couch2
+
+  couch1:
+    image: couchdb:latest
+    ports:
+      - "5984:5984"
+
+  couch2:
+    image: couchdb:latest
+    ports:
+      - "5985:5984"

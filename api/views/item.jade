@@ -1,0 +1,7 @@
+p
+  div
+    span= item.value.text
+    a(href='/delete/' + item.id + '/' + item.value._rev) [x]
+    div.due
+      #{item.due}
+    

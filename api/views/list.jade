@@ -1,0 +1,13 @@
+h1 Todo List
+#items
+  - each item in items
+    include item
+
+hr
+form(action='/', method='POST')
+  p
+    label(for='todo_text') Todo to add:
+    input#todo_text(type='text', name='todo[text]')
+    label(for='todo_due') Due Date (optional):
+    input#todo_due(type='text', name='todo[due]')
+    input(type='submit', value='add')
